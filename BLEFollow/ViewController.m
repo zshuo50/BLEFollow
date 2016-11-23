@@ -270,6 +270,7 @@ static NSString * const LocalNameKey =  @"PP GUN BLE4.0";
     if (request.characteristic.properties & CBCharacteristicPropertyRead) {
         NSData *data = request.characteristic.value;
         [request setValue:data];
+        NSLog(@"value==%@",request.value);
         //对请求作出成功响应
         [_MyPeripheralManager respondToRequest:request withResult:CBATTErrorSuccess];
     }else{
